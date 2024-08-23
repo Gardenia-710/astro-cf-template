@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 
+import Layout from "../../layouts/Layout.astro";
 import { previewClient } from "../../libs/newt";
 import type { Activity } from "../../libs/newt";
 
@@ -21,4 +22,10 @@ const content = await previewClient.getContent<Activity>({
 console.log(content);
 ---
 
-<div>こんにちは</div>
+<Layout title="hoge">
+  <main>
+    <div>
+      <article set:html={content.body} />
+    </div>
+  </main>
+</Layout>
