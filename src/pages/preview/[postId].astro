@@ -1,7 +1,6 @@
 ---
 export const prerender = false;
 
-import Layout from "../../layouts/Layout.astro";
 import { previewClient } from "../../libs/newt";
 import type { Activity } from "../../libs/newt";
 
@@ -18,10 +17,8 @@ const content = await previewClient.getContent<Activity>({
   modelUid: "activity",
   contentId: postId,
 });
+
+console.log(content);
 ---
 
-<Layout title="hogehoge">
-  <div>
-    <article set:html={content.body} />
-  </div>
-</Layout>
+<div>こんにちは</div>
