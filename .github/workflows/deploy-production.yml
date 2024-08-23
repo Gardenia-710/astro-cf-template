@@ -40,3 +40,11 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=astro-cf-template
+          secrets: |
+            NEWT_SPACE_UID
+            NEWT_API_TOKEN
+            NEWT_APP_UID
+        env:
+          NEWT_SPACE_UID: ${{ secrets.NEWT_SPACE_UID }}
+          NEWT_API_TOKEN: ${{ secrets.NEWT_API_TOKEN }}
+          NEWT_APP_UID: ${{ secrets.NEWT_APP_UID }}
