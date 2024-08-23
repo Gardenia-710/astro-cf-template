@@ -1,0 +1,18 @@
+---
+import { newtClient } from "../../libs/newt";
+import type { Member } from "../../libs/newt";
+
+const { items: members } = await newtClient.getContents<Member>({
+  appUid: import.meta.env.NEWT_APP_UID,
+  modelUid: "member",
+  query: {
+    order: ["_sys.createdAt"],
+  },
+});
+---
+
+<div>
+  <ul>
+    {members.map((member) => <li>{member.name}</li>)}
+  </ul>
+</div>

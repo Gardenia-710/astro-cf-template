@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/cloudflare": "^11.0.4",
     "astro": "^4.14.5",
+    "newt-client-js": "^3.3.4",
     "typescript": "^5.5.4"
   }
 }

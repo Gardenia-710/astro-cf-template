@@ -29,6 +29,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          NEWT_SPACE_UID: ${{ secrets.NEWT_SPACE_UID }}
+          NEWT_CDN_API_TOKEN: ${{ secrets.NEWT_CDN_API_TOKEN }}
+          NEWT_API_TOKEN: ${{ secrets.NEWT_API_TOKEN }}
+          NEWT_APP_UID: ${{ secrets.NEWT_APP_UID }}
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
