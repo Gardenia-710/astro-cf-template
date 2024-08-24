@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm";
+
+const siteKey = import.meta.env.TURNSTILE_SITE_KEY;
+---
+
+<Layout title="Contact">
+  <ContactForm siteKey={siteKey} client:only="react" />
+</Layout>
