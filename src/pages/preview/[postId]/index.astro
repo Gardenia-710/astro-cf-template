@@ -1,9 +1,9 @@
 ---
 export const prerender = false;
 
-import Layout from "../../layouts/Layout.astro";
-import { previewClient } from "../../libs/newt";
-import type { Activity } from "../../libs/newt";
+import Layout from "../../../layouts/Layout.astro";
+import { previewClient } from "../../../libs/newt";
+import type { Activity } from "../../../libs/newt";
 
 const { postId } = Astro.params;
 if (!postId) {
@@ -18,13 +18,11 @@ const content = await previewClient.getContent<Activity>({
   modelUid: "activity",
   contentId: postId,
 });
-
-console.log(content);
 ---
 
 <Layout title="hoge">
   <main>
-    <div>
+    <div class="foobar">
       <article set:html={content.body} />
     </div>
   </main>
